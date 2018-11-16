@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        var questions = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"]
+       
+        var correctAnswers = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10"]
+        
+        var score = 0; 
+        
+        var questionsIndex = 0;
+
+        function renderQuestion() {
+
+            if (questionsIndex <= (questions.length -1)) {
+                document.querySelector("#question").innerHTML = questions[questionIndex].q;
+            }
+
+            else { 
+                document.querySelector("#question").innerHTML = "Game Over!";
+                document.querySelector("#score").innerHTML = "Final Score: " + score + " out of: " + questions.length;
+
+
+
+                }
+            }
+
+
+
+
+
+        
+
+
+
+
+
+    </script> 
+
+
+
+
+
+</body>
+</html>
