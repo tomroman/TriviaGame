@@ -9,38 +9,112 @@
 </head>
 <body>
     
+  
+                <h1>totally tricky trivia</h1>
+                <div id="quiz"></div>
 
 
-    <script>
+           
+            
+              
 
-        var questions = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"]
-       
-        var correctAnswers = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10"]
+
+
+
+
+    <script> type="text/javascript"
+
+    var quizContainer = $("quiz")
+
+    var score = 0;
+   
+   var questionIndex = 0;
+
+        function buildQuiz() {
+            
+            var output = [];
+            questions.forEach(
+
+                (currentQuestion, questionNumber) => {
+
+                    var answers = [];
+                    for(letter in currentQuestion.answers){
+
+                        answers.push(
+
+                            `<label>
+                                <input type = "radio" name="question${questionNumber}"
+
+                                value ="${letter}">
+                                    ${letter} :
+                                    ${currentQuestion.answers[letter]}
+                            </label>` 
+                        ); 
+                     }
+
+
+                     output.push (
+                        
+                        `<div classes="question"> ${currentQuestion.question} </div> 
+
+                        <div class ="answers"> ${answers.join(' ')} </div> `
+
+                     );
+                    }
+                   );
+
+                quizContainer.innerHTML = output.join(" ");
+        }
+
+
+
+        buildQuiz(); 
+
+    $(document).ready(function() {
+
+    var questions = [
         
-        var score = 0; 
+        { 
+            question: "Which artist is widely reguarded as the king of pop?",
         
-        var questionsIndex = 0;
+            answers: {
+        a: "elvis",  
+        b: "Michael Jackson", 
+        c: "prince", 
+        d: "madonna" 
+            },
 
-        function renderQuestion() {
-
-            if (questionsIndex <= (questions.length -1)) {
-                document.querySelector("#question").innerHTML = questions[questionIndex].q;
-            }
-
-            else { 
-                document.querySelector("#question").innerHTML = "Game Over!";
-                document.querySelector("#score").innerHTML = "Final Score: " + score + " out of: " + questions.length;
-
-
-
-                }
-            }
-
-
-
-
-
+            correctAnswer: "c"
+        },
         
+        { question: "Which band went on to release their highest selling album after the death of thier lead singer?", 
+        
+            answers: {
+        a:"The Beatles", 
+        b:"Pink Floyd", 
+        c:"Queen", 
+        d:"Ac/Dc"
+            },
+
+            correctAnswer: "d"
+        }, 
+
+        { question: "which artist has the most sold album of the 2000's?", 
+
+            answers: {
+        a: "eminem", 
+        b: "adele", 
+        c: "brittany spears", 
+        d: "taylor swift"
+
+        },
+
+            correctAnswer: "a"
+
+        }
+             ]
+
+    });
 
 
 
