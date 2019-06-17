@@ -1,4 +1,13 @@
-var timer = {
+let intervalID;
+let CorrectAnswers = [];
+let correct = 0;
+let incorrect = 0;
+let unanswered = 0;
+
+
+
+
+let timer = {
     seconds: 120,
 
     start: function () {
@@ -19,4 +28,29 @@ var timer = {
         clearInterval(intervalID);
     }
 
+}
+
+$(document).on("click", "#done-button", endGame);
+
+if (timer.seconds === 0) {
+    endGame();
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    
+    while (0 !== currentIndex) {
+
+       
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
