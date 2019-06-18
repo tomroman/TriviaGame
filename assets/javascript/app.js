@@ -54,3 +54,19 @@ function shuffle(array) {
 
     return array;
 }
+
+function endGame() {
+    timer.end();
+
+    for (var i = 0; i < 8; i++) {
+        var selValue = $(`input[name=question${i + 1}]:checked`).val();
+        if (selValue === correctAnswers[i]) {
+            correct++;
+            unanswered--;
+        }
+        else if (selValue !== undefined) {
+            incorrect++;
+            unanswered--;
+        }
+    }
+}
