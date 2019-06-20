@@ -55,6 +55,21 @@ function shuffle(array) {
     return array;
 }
 
+$("#start-button").on("click", function () {
+    $("#start-button-row").remove();
+
+    var timerDiv = $("<div id='timer-box'>");
+    timerDiv.attr("class", "row");
+    timerDiv.html(`<div class="col">
+                        <h2 id="timer">Time Remaining: 120 Seconds</h2>
+                    </div>`);
+
+    $(".container").append(timerDiv);
+
+    timer.start();
+});
+
+
 function endGame() {
     timer.end();
 
