@@ -2,7 +2,7 @@ let intervalID;
 let CorrectAnswers = [];
 let correct = 0;
 let incorrect = 0;
-let unanswered = 0;
+let unanswered = 8;
 
 
 
