@@ -1,72 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src = "assets/javascript/app.js"> </script> 
-    <title>Document</title>
 </head>
+
 <body>
-    
-  
-    <div id="buttons">
-        <button id="start"><h2>Start</h2></button>
-      </div>
 
-
-
-                <h1>Pop Music Trivia</h1>
-                <form id="quiz" name = "quiz">
-
-
-                <p> Which artist is widely reguarded as "The King of Pop? </p>
-                <input type = "radio" id = "mc" name = "question1" value = "Prince"> Prince<br>
-                <input type = "radio" id = "mc" name = "question1" value = "MichaelJackson"> Michael Jackson<br>
-                <input type = "radio" id = "mc" name = "question1" value = "Elvis"> Elvis<br> 
-                <input type = "radio" id = "mc" name = "question1" value = "BillyJoel"> Billy Joel<br>
-
-
-                <p> "Which artist has the highest selling album of the 2000's?"</p>
-                <input type = "radio" id = "mc" name = "question2" value = "Eminem"> Eminem<br>
-                <input type = "radio" id = "mc" name = "question2" value = "TaylorSwift"> Taylor Swift<br>
-                <input type = "radio" id = "mc" name = "question2" value = "Adele"> Adele<br>
-                <input type = "radio" id = "mc" name = "question2" value = "BritneySpears"> Britney Spears<br>
-
-                <p> Which band went on to produce their highest selling album after the passing of their lead singer?</p>
-                <input type = "radio" id = "mc" name = "question3" value = "TheDoors"> The Doors<br>
-                <input type = "radio" id = "mc" name = "question3" value = "Queen"> Queen<br>
-                <input type = "radio" id = "mc" name = "question3" value = "Ac/Dc"> Ac/Dc<br>
-                <input type = "radio" id = "mc" name = "question3" value = "TheBeatles"> The Beatles<br>
-                
-
-                    <input id = "button" type = "button" value = "I'm finished!" onclick = "check();"> 
-
-                    </form>
-
-
-
-
-
-            <div id = "submit">
-            <p id = "number-correct"></p>
-            <p id = "comment"></p>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Trivia!</h1>
             </div>
+        </div>
+
+
+        <div class="row" id="start-button-row">
+            <div class="col">
+                <button type="button" id="start-button">
+                    Start
+                </button>
+            </div>
+        </div>
+
+    </div>
 
 
 
-                   
-
-
-          
-
-  
-
-
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
