@@ -1,4 +1,5 @@
 let intervalID;
+let queryURL = "https://opentdb.com/api.php?amount=8&category=9&difficulty=easy&type=multiple";
 let CorrectAnswers = [];
 let correct = 0;
 let incorrect = 0;
