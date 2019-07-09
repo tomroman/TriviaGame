@@ -1,6 +1,6 @@
 let intervalID;
 let queryURL = "https://opentdb.com/api.php?amount=8&category=9&difficulty=easy&type=multiple";
-let CorrectAnswers = [];
+let correctAnswers = [];
 let correct = 0;
 let incorrect = 0;
 let unanswered = 8;
@@ -74,16 +74,16 @@ $("#start-button").on("click", function () {
         method: "GET"
     }).then(function (response) {
 
-        for (var i = 0; i < response.results.length; i++) {
+        for (let i = 0; i < response.results.length; i++) {
 
-            var answersArr = response.results[i].incorrect_answers;
+            let answersArr = response.results[i].incorrect_answers;
             answersArr.push(response.results[i].correct_answer);
             correctAnswers.push(response.results[i].correct_answer);
 
             answersArr = shuffle(answersArr);
 
 
-            var questionDiv = $("<div>");
+            let questionDiv = $("<div>");
             questionDiv.attr("class", "row question");
             questionDiv.html(`<div class="col">
             <h2>${response.results[i].question}</h2>
@@ -128,12 +128,16 @@ $("#start-button").on("click", function () {
     timer.start();
 });
 
+if (timer.seconds === 0) {
+    endGame();
+
+}
 
 function endGame() {
     timer.end();
 
-    for (var i = 0; i < 8; i++) {
-        var selValue = $(`input[name=question${i + 1}]:checked`).val();
+    for (let i = 0; i < 8; i++) {
+        let selValue = $(`input[name=question${i + 1}]:checked`).val();
         if (selValue === correctAnswers[i]) {
             correct++;
             unanswered--;
