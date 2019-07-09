@@ -59,7 +59,7 @@ function shuffle(array) {
 $("#start-button").on("click", function () {
     $("#start-button-row").remove();
 
-    var timerDiv = $("<div id='timer-box'>");
+    let timerDiv = $("<div id='timer-box'>");
     timerDiv.attr("class", "row");
     timerDiv.html(`<div class="col">
                         <h2 id="timer">Time Remaining: 120 Seconds</h2>
@@ -116,12 +116,12 @@ $("#start-button").on("click", function () {
             $(".container").append(questionDiv);
         }
 
-        var doneButton = $(`<div class="row" id="done-button-row">
+        let doneButton = $(`<div class="row" id="done-button-row">
         <div class="col">
             <button type="button" id="done-button">Done</button>
         </div>
     </div>`);
-    $(".continer").append(doneButton);
+    $(".container").append(doneButton);
     })
         
 
