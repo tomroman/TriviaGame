@@ -38,7 +38,7 @@ if (timer.seconds === 0) {
 }
 
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     
     while (0 !== currentIndex) {
